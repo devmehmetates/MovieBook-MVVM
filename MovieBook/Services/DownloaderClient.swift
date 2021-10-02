@@ -12,7 +12,7 @@ struct DownloaderClient {
     
     func downloadMovie(searchKey : String , completion : @escaping (Result<[Film]? , DownloaderError>) -> Void){
         
-        guard let url = URL (string: "https://www.omdbapi.com/?s=\(searchKey)&apikey=8fcc190a")
+        guard let url = URL (string: "https://www.omdbapi.com/?s=\(searchKey)&apikey=Token")
         else{
             return completion(.failure(.wrongUrl))
         }
@@ -31,7 +31,7 @@ struct DownloaderClient {
     }
     
     func downloadDetailMovie(imdbID : String, completion : @escaping (Result<FilmDetay? , DownloaderError>) -> Void){
-        guard let url = URL (string: "https://www.omdbapi.com/?i=\(imdbID)&apikey=8fcc190a")
+        guard let url = URL (string: "https://www.omdbapi.com/?i=\(imdbID)&apikey=Token")
         else{
             return completion(.failure(.wrongUrl))
         }
